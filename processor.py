@@ -47,7 +47,7 @@ def main():
             print(f"Found {len(reqs)} requests.")
             for i in reqs:
                 req = parse_request(i)
-                print(f"> {req["method"]} {req["url"]}")
+                print(f"> {req['method']} {req['url']}")
                 res = make_request(req)
                 print(f"< {res.status_code}")
                 write_response(i, res)

@@ -37,7 +37,7 @@ def request(flow: http.HTTPFlow):
     res = json.loads(fres.read())
     fres.close()
     remove(join(ctx.options.disk, "res", str(cn)))
-    logging.info(f"{cn} < {res["status"]} {flow.request.url}")
+    logging.info(f"{cn} < {res['status']} {flow.request.url}")
     flow.response = http.Response.make(
         res["status"],
         base64.b64decode(res["body"]),
